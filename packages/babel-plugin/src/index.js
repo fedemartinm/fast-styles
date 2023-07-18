@@ -1,4 +1,4 @@
-import { generate } from "@babel/generator";
+import generate from "@babel/generator";
 import { generateStyles } from "@fast-styles/core";
 
 export default function babelPluginWithStyles({ types: t, parse }) {
