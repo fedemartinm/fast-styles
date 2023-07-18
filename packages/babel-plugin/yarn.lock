@@ -1055,10 +1055,10 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
-"@fast-styles/core@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@fast-styles/core/-/core-0.1.1.tgz#2a3e88eb1768e8d57bd2865bbc153d49c18e8c3c"
-  integrity sha512-31Uybkw8YYm3aVeXBzpWT+VDIHMTYn1o1WKyLqVZ++7pF8Ex57XGlsajoEAnd0IgIBQG6qRKP/zAFvJXnSoFQg==
+"@fast-styles/core@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@fast-styles/core/-/core-0.1.3.tgz#b07ee6ba2c3775cac15daac50932333fc9796033"
+  integrity sha512-SUyezSdkcmKyB8YS7hV1O6I6GeJOj+NJlZSOSPSb/bWEbbXdPMZGIFi0wlP3IxLOiHWVZOmmNmNg6F8yqOSGOQ==
 
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
