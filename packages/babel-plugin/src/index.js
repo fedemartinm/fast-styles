@@ -5,7 +5,7 @@ export default function babelPluginWithStyles({ types: t, parse }) {
   return {
     visitor: {
       CallExpression(path) {
-        if (t.isIdentifier(path.node.callee, { name: "withStyles" })) {
+        if (t.isIdentifier(path.node.callee, { name: "styled" })) {
           // get styles object
           const objectNode = path.node.arguments[1];
           const styledObjectCode = generate(objectNode).code;
