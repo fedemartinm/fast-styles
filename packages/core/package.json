@@ -1,6 +1,6 @@
 {
   "name": "@fast-styles/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fast Styles core features",
   "main": "lib/commonjs/index.js",
   "repository": "https://github.com/fedemartinm/fast-styles/tree/main/packages/core",
