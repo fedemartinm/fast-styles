@@ -13,6 +13,15 @@ What should be a solution for styling ends up becoming a performance problem. Ea
 ### The solution
 Fortunately, there is a solution to easily handle variants and themes in React Native, and that is to generate styles at compile-time. Using the styled HOC from this library, you can generate styles for different variants of your components without adding any runtime overhead. In fact, the resulting code can be more efficient than using statically created styles with `StyleeSheet.create()`.
 
+### Installation
+```sh
+yarn add @fast-styles/react
+```
+or
+```sh
+npm install @fast-styles/react --save
+```
+
 ### Usage
 This example creates a ButtonRoot component from a touchable and defines the `type` variant to change the button color.
 ```javascript
@@ -43,7 +52,7 @@ const ButtonRoot = styled(TouchableOpacity, {
 
 const Button = (props) => {
   return (
-    <ButtonRoot variant={'positive'} onPress={props.onPress}
+    <ButtonRoot type={'positive'} onPress={props.onPress}
     >
       {props.children}
     </ButtonRoot>
