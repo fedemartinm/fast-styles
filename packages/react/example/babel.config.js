@@ -1,5 +1,6 @@
 const path = require('path');
 const pak = require('../package.json');
+const babelPluginFastSyles = require('@fast-styles/babel-plugin');
 
 module.exports = function (api) {
   api.cache(true);
@@ -17,6 +18,7 @@ module.exports = function (api) {
           },
         },
       ],
+      babelPluginFastSyles,
     ],
   };
 };

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "fast-styles": ["./src/index"]
+      "@fast-styles/react": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

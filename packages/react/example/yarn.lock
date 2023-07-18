@@ -1506,6 +1506,19 @@
     find-up "^5.0.0"
     js-yaml "^4.1.0"
 
+"@fast-styles/babel-plugin@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@fast-styles/babel-plugin/-/babel-plugin-0.1.4.tgz#46f485276f7ef05206d4eeff1800d4ea64a1841d"
+  integrity sha512-GPST/Ny+DpAxbgORhMK17K9uthSq5gVfTsL09vr3R98AYJiCZVNl43D7kODtzG1eracsFjMyJ4bWG7jsknsvaQ==
+  dependencies:
+    "@babel/generator" "^7.22.9"
+    "@fast-styles/core" "^0.1.3"
+
+"@fast-styles/core@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@fast-styles/core/-/core-0.1.3.tgz#b07ee6ba2c3775cac15daac50932333fc9796033"
+  integrity sha512-SUyezSdkcmKyB8YS7hV1O6I6GeJOj+NJlZSOSPSb/bWEbbXdPMZGIFi0wlP3IxLOiHWVZOmmNmNg6F8yqOSGOQ==
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
