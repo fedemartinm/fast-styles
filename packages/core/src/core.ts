@@ -80,7 +80,7 @@ export function generateDependenciesExtractor(
   styledObject: StyledObject<any, any>
 ): any {
   const { variants } = styledObject;
-  const variantKeys = Object.keys(variants).sort();
+  const variantKeys = ["style", ...Object.keys(variants).sort()];
 
   return (props: any) => variantKeys.map((key: any) => (props as any)[key]);
 }
