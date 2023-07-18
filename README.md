@@ -1,7 +1,6 @@
-# ⚡ Fast Styles
-A lightweight and efficient React Native styling package that generates styles during compile time without any runtime overhead.
+# ⚡ Fast Styles - A lightweight and efficient React styling package
 
-- Support for single, multiple, and compound variants
+- Support for single, multiple, and compound variants without any runtime overhead
 - Runtime or compile-time style generation using a babel plugin
 - Typescript support with variant autocompletion as a property
 - Drop-in replacement for StyleSheet
