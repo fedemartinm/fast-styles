@@ -1,0 +1,37 @@
+{
+  "name": "@fast-styles/babel-plugin",
+  "version": "0.1.0",
+  "description": "A Babel plugin that generates fast-styles style maps at compile time",
+  "main": "lib/commonjs/index.js",
+  "repository": "https://github.com/fedemartinm/fast-styles/tree/main/packages/babel-plugin",
+  "author": "Fede Martin",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "react-native-builder-bob": "^0.21.2"
+  },
+  "react-native": "src/index.js",
+  "module": "lib/module/index.js",
+  "scripts": {
+    "prepack": "bob build"
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
+}

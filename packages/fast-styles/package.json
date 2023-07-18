@@ -1,5 +1,5 @@
 {
-  "name": "fast-styles",
+  "name": "@fast-styles/react",
   "version": "0.1.0",
   "description": "A lightweight and efficient React styling package",
   "main": "lib/commonjs/index",
