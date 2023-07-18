@@ -1,6 +1,6 @@
 {
   "name": "@fast-styles/babel-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Babel plugin that generates fast-styles style maps at compile time",
   "main": "lib/commonjs/index.js",
   "repository": "https://github.com/fedemartinm/fast-styles/tree/main/packages/babel-plugin",
@@ -8,6 +8,9 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@babel/generator": "^7.22.9",
+    "@fast-styles/core": "^0.1.1",
+    "@types/node": "^20.4.2",
     "react-native-builder-bob": "^0.21.2"
   },
   "react-native": "src/index.js",

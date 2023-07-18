@@ -1055,6 +1055,11 @@
     "@babel/helper-validator-identifier" "^7.22.5"
     to-fast-properties "^2.0.0"
 
+"@fast-styles/core@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@fast-styles/core/-/core-0.1.1.tgz#2a3e88eb1768e8d57bd2865bbc153d49c18e8c3c"
+  integrity sha512-31Uybkw8YYm3aVeXBzpWT+VDIHMTYn1o1WKyLqVZ++7pF8Ex57XGlsajoEAnd0IgIBQG6qRKP/zAFvJXnSoFQg==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
@@ -1117,6 +1122,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@types/node@^20.4.2":
+  version "20.4.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.4.2.tgz#129cc9ae69f93824f92fac653eebfb4812ab4af9"
+  integrity sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
