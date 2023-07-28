@@ -1,0 +1,139 @@
+@keyframes expandWidth {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.benchmark {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.benchmark__title {
+  font-size: 2rem;
+}
+
+.benchmark__subtitle {
+  font-size: 1.5rem;
+}
+
+.benchmark_columns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  gap: 2rem;
+}
+
+.chart {
+  padding: 16px;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  overflow-x: hidden;
+  display: flex;
+}
+
+/*fast-styles: #ffc72c*/
+/*native-base:#50bfc2*/
+/*styled-components:#c04f74 */
+/*react: #61dafb*/
+/*gluestack: #3fb6ac*/
+/*tamagui: #ff8ee8*/
+
+.barContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+.bar {
+  height: 30px;
+  animation-timing-function: linear;
+}
+.text {
+  display: block;
+  color: white;
+  opacity: 0;
+  margin-left: 10px;
+  animation-name: fadeInText;
+  animation-fill-mode: forwards;
+  animation-duration: 500ms;
+}
+
+.text.fast {
+  animation-delay: 508ms;
+}
+
+.text.vanilla {
+  animation-delay: 564ms;
+}
+
+.text.styled {
+  animation-delay: 720ms;
+}
+
+.text.tamagui {
+  animation-delay: 1520ms;
+}
+
+.text.nativebase {
+  animation-delay: 2800ms;
+}
+
+.bar.fast {
+  width: 50px;
+  background-color: #ffc72c;
+}
+.bar.fast {
+  animation: expandWidth 508ms;
+}
+
+.bar.vanilla {
+  width: 56px;
+  background-color: #61dafb;
+  animation: expandWidth 564ms;
+  animation-timing-function: linear;
+}
+.bar.styled {
+  width: 72px;
+  background-color: #c04f74;
+  animation: expandWidth 720ms;
+  animation-timing-function: linear;
+}
+
+.bar.tamagui {
+  width: 152px;
+  background-color: #ff8ee8;
+  animation: expandWidth 1520ms;
+  animation-timing-function: linear;
+}
+.bar.gluestack {
+  width: 280px;
+  background-color: #3fb6ac;
+  animation: expandWidth 1400ms;
+  animation-timing-function: linear;
+}
+.bar.nativebase {
+  width: 280px;
+  background-color: #50bfc2;
+  animation: expandWidth 2800ms;
+  animation-timing-function: linear;
+}

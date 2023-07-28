@@ -1,0 +1,17 @@
+.usage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.codeBlock {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.usage__title {
+  font-size: 2rem;
+}
+.usage__subtitle {
+  font-size: 1.5rem;
+}

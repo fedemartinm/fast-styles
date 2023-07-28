@@ -1,0 +1,44 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #ffc72c;
+  --ifm-color-primary-dark: #e1c33b;
+  --ifm-color-primary-darker: #c6a131;
+  --ifm-color-primary-darkest: #ab841e;
+  --ifm-color-primary-light: #f6e57d;
+  --ifm-color-primary-lighter: #f8ebaa;
+  --ifm-color-primary-lightest: #fbf2d7;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #ffc72c;
+  --ifm-color-primary-dark: #e1c33b;
+  --ifm-color-primary-darker: #c6a131;
+  --ifm-color-primary-darkest: #ab841e;
+  --ifm-color-primary-light: #f6e57d;
+  --ifm-color-primary-lighter: #f8ebaa;
+  --ifm-color-primary-lightest: #fbf2d7;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] footer {
+  background-color: #242526;
+  text-align: center;
+}
+html[data-theme="light"] footer {
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
+  & .footer__link-item,
+  .footer__title {
+    color: #1c1e21;
+  }
+}
