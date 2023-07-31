@@ -27,8 +27,8 @@ const ColorBox = styled(View, {
 export default function App() {
   return (
     <Stack direction="row" wrap={'wrap'} gap={defaultTheme.spacings.$1} w={412} h={360}>
-      {Object.values(defaultTheme.colors).map((value: any) => (
-        <ColorBox bg={value} />
+      {Object.values(defaultTheme.colors).map((value: any, index) => (
+        <ColorBox key={index} bg={value} />
       ))}
     </Stack>
   );
