@@ -36,7 +36,7 @@ const ButtonRoot = styled(TouchableOpacity, {
   borderRadius: 20,
   // variants
   variants: {
-    type: {
+    coloScheme: {
       "primary": {
         positive: "green",
       },
@@ -52,7 +52,7 @@ const ButtonRoot = styled(TouchableOpacity, {
 
 const Button = (props) => {
   return (
-    <ButtonRoot type={'positive'} onPress={props.onPress}
+    <ButtonRoot colorScheme={'positive'} onPress={props.onPress}
     >
       {props.children}
     </ButtonRoot>
@@ -69,37 +69,39 @@ const ButtonRoot = styled(TouchableOpacity, {
   alignItems: "center",
   justifyContent: "center",
   variants: {
-    variant: {
+    type: {
       solid: {},
       outline: {
         backgroundColor: "transparent",
         borderWidth: 3,
-      },
-      "solid+positive": {
-        backgroundColor: "green",
-      },
-      "solid+negative": {
-        backgroundColor: "red",
-      },
-      "solid+disabled": {
-        backgroundColor: "gray",
-      },
-      "outline+positive": {
-        borderColor: "green",
-      },
-      "outline+negative": {
-        borderColor: "red",
-      },
-      "outline+disabled": {
-        borderColor: "gray",
-      },
+      }
     },
-    type: {
-      positive: {},
+    colorScheme: {
+      primary: {},
       negative: {},
       disabled: {},
     },
   },
+  compoundVariants:{
+    "solid+primary": {
+        backgroundColor: "green",
+    },
+    "solid+negative": {
+      backgroundColor: "red",
+    },
+    "solid+disabled": {
+      backgroundColor: "gray",
+    },
+    "outline+primary": {
+      borderColor: "green",
+    },
+    "outline+negative": {
+      borderColor: "red",
+    },
+    "outline+disabled": {
+      borderColor: "gray",
+    }
+  }
 });
 ```
 
@@ -110,7 +112,7 @@ The `styled` HOC generates a map with all possible combinations for each variant
 ```javascript
 const Button = styled(TouchableOpacity, {
   variants: {
-    type: {
+    colorScheme: {
       primary: { /* small styles */ },
       secondary: { /* small styles */ }
     },
