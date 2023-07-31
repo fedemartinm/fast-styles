@@ -120,11 +120,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
       style={props.style}
       onPress={props.onPress}
     >
-      <ButtonText
-        variant={propsWithDefault.variant}
-        size={propsWithDefault.size}
-        type={propsWithDefault.type}
-      >
+      <ButtonText variant={propsWithDefault.variant} size={propsWithDefault.size} type={propsWithDefault.type}>
         {props.children}
       </ButtonText>
     </ButtonRoot>

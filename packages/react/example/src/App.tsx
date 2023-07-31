@@ -1,47 +1,35 @@
 import * as React from 'react';
 
-import { Button } from './button';
-import { ScrollView } from 'react-native';
+import { defaultTheme, styled } from '@fast-styles/react';
+
+import { View } from 'react-native';
+
+const Stack = styled(View, {
+  display: 'flex',
+  styleProps: {
+    w: 'width',
+    h: 'height',
+    gap: 'gap',
+    wrap: 'flexWrap',
+    direction: 'flexDirection',
+  },
+});
+
+const ColorBox = styled(View, {
+  borderRadius: defaultTheme.borderRadiuses.$3,
+  height: defaultTheme.spacings.$12,
+  width: defaultTheme.spacings.$12,
+  styleProps: {
+    bg: 'backgroundColor',
+  },
+});
 
 export default function App() {
   return (
-    <ScrollView>
-      <Button size="small" type="negative" variant="outline">
-        Text
-      </Button>
-      <Button size="small" type="negative" variant="solid">
-        Text
-      </Button>
-      <Button size="small" type="primary" variant="outline">
-        Text
-      </Button>
-      <Button size="small" type="primary" variant="solid">
-        Text
-      </Button>
-      <Button size="medium" type="negative" variant="outline">
-        Text
-      </Button>
-      <Button size="medium" type="negative" variant="solid">
-        Text
-      </Button>
-      <Button size="medium" type="primary" variant="outline">
-        Text
-      </Button>
-      <Button size="medium" type="primary" variant="solid">
-        Text
-      </Button>
-      <Button size="large" type="negative" variant="outline">
-        Text
-      </Button>
-      <Button size="large" type="negative" variant="solid">
-        Text
-      </Button>
-      <Button size="large" type="primary" variant="outline">
-        Text
-      </Button>
-      <Button size="large" type="primary" variant="solid">
-        Text
-      </Button>
-    </ScrollView>
+    <Stack direction="row" wrap={'wrap'} gap={defaultTheme.spacings.$1} w={412} h={360}>
+      {Object.values(defaultTheme.colors).map((value: any) => (
+        <ColorBox bg={value} />
+      ))}
+    </Stack>
   );
 }
