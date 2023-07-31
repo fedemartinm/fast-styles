@@ -135,19 +135,3 @@ const buttonStyles = {
   "secondary+large": { /* combined styles */ },
 };
 ```
-
-Additionally, it will detect the variants, create a function to extract dependencies, and memoize the application of styles based on changes in the properties of each variant.
-
-```javascript
-// efficient, compile-time generated 
-const getDependencies = (props) => [props.type, props.size];
-
-// the result will look very similar to this component
-const Button = (props) => {
-  const dependencies = getDependencies(props);
-  const styles = useMemo(() => {
-    const currentStyle = dependencies.join("+");
-    return buttonStyles[currentStyle];
-  }, [dependencies]);
-};
-```
