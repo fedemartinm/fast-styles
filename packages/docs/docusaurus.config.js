@@ -11,22 +11,16 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  url: "https://fedemartinm.github.io",
+  baseUrl: "/fast-styles/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "@fast-styles", // Usually your GitHub org/user name.
-  projectName: "fast-styles", // Usually your repo name.
+  organizationName: "@fast-styles",
+  projectName: "fast-styles",
+  deploymentBranch: "gh-pages",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -64,8 +58,7 @@ const config = {
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
-      // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/fast-styles-social-card.png",
       navbar: {
         title: "Fast Styles",
         logo: {
