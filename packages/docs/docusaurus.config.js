@@ -13,8 +13,7 @@ const config = {
   // Set the production url of your site here
   url: "https://fedemartinm.github.io",
   baseUrl: "/fast-styles/",
-
-  organizationName: "@fast-styles",
+  organizationName: "fedemartinm",
   projectName: "fast-styles",
   deploymentBranch: "gh-pages",
   trailingSlash: false,
