@@ -38,4 +38,4 @@ export const spacings = {
   $threeFifths: '60%',
   $fourFifths: '80%',
   $full: '100%',
-};
+} as const;

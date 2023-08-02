@@ -9,4 +9,4 @@ export const fontSizes = {
   $3xl: 30,
   $4xl: 36,
   $5xl: 48,
-};
+} as const;

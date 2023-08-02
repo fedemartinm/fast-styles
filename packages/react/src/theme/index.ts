@@ -8,17 +8,6 @@ import { spacings } from './spacings';
 import { styles } from './styles';
 import { tokens } from './tokens';
 
-export const defaultTheme = {
-  colors,
-  fonts,
-  borderRadiuses,
-  fontWeights,
-  fontSizes,
-  spacings,
-  styles,
-  tokens,
-};
-
 /**
  * Creates a new theme object based on the provided theme and freezes it.
  */
@@ -44,3 +33,14 @@ export function mergeTheme<A, B>(themeA: A, themeB: B) {
 export function extendDefaultTheme<T>(theme: T) {
   return Object.freeze(merge(defaultTheme, theme));
 }
+
+export const defaultTheme = createTheme({
+  colors,
+  fonts,
+  borderRadiuses,
+  fontWeights,
+  fontSizes,
+  spacings,
+  styles,
+  tokens,
+});

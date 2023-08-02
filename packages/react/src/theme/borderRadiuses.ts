@@ -13,4 +13,4 @@ export const borderRadiuses = {
   $15: 30,
   $20: 40,
   $50: 50,
-};
+} as const;

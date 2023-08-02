@@ -62,4 +62,4 @@ export const tokens = {
   $outlinePositive: colors.$green5,
   $outlineNegative: colors.$red5,
   $outlineWarning: colors.$yellow5,
-};
+} as const;

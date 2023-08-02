@@ -1,4 +1,12 @@
-import { Platform } from 'react-native';
+//React-Native is a peer dependency and may not be installed when using Fast Styles on the web
+let Platform;
+try {
+  Platform = require('react-native').Platform;
+} catch (error) {
+  Platform = {
+    select: (options: any) => options.web,
+  };
+}
 
 export const fonts = {
   $heading: Platform.select({
