@@ -17,6 +17,7 @@ const config = {
   organizationName: "@fast-styles",
   projectName: "fast-styles",
   deploymentBranch: "gh-pages",
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",

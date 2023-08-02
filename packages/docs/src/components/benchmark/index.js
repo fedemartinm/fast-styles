@@ -14,7 +14,7 @@ export default function Benchmark() {
       </h2>
       <p className={styles.benchmark__subtitle}>
         See how we stack up against other libraries in our{" "}
-        <Link to="algo">benchmark results</Link>
+        <Link to="/docs/category/basics">benchmark results</Link>
       </p>
       <div className={styles.benchmark_columns}>
         <Iphone animated={triggered} ref={iphoneRef} />

@@ -17,7 +17,7 @@ export default function Usage() {
       </CodeBlock>
       <Link
         className="button button--secondary button--lg margin-bottom--lg margin-top--lg"
-        to="/docs/intro"
+        to="/docs/category/basics"
       >
         Get Started
       </Link>
