@@ -4,9 +4,11 @@
 import type { Platform } from 'react-native';
 
 let PlatformSelect: Platform['select'];
-try {
-  PlatformSelect = require('react-native').Platform.select;
-} catch (error) {
+
+if (typeof (globalThis as any).window !== 'undefined') {
   PlatformSelect = (specify: any) => specify.web;
+} else {
+  PlatformSelect = require('react-native').Platform.select;
 }
+
 export { PlatformSelect };
