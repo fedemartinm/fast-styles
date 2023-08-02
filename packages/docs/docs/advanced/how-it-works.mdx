@@ -1,0 +1,64 @@
+---
+sidebar_position: 5
+description: Understanding the process
+---
+
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import treeImage from "./img/tree.png";
+import treeImageDark from "./img/tree-dark.png";
+import traverseImage from "./img/traverse.png";
+import traverseImageDark from "./img/traverse-dark.png";
+import stylemapImage from "./img/stylemap.png";
+import stylemapImageDark from "./img/stylemap-dark.png";
+
+# How it works
+
+The working principle of Fast Styles involves generating a **style map** when the styled hoc is called.
+This approach saves a lot of time during component rendering, as all the variants are generated and stored in the **style map object** of that component.
+If you use the Babel plugin, these calculations are performed during transpilation, minimizing runtime overhead.
+
+Next, we will briefly describe how the style map generation works.
+
+### 1. Variant Tree
+
+Conceptually, we should understand the possible variants of a component as a tree,
+where the leaves of each level are the possible options for each variant.
+
+<ThemedImage
+  alt="tree"
+  width={700}
+  sources={{
+    light: treeImage,
+    dark: treeImageDark,
+  }}
+/>
+
+### 2. Traverse the tree
+
+Generating the **style map** is as simple as traversing each branch of the tree to the last level, accumulating the styles of each variant along the way.
+
+As the tree is traversed, an array is stored with the path, containing each option in that traversal. This array is useful for searching and applying rules defined in the **compound variants**.
+
+<ThemedImage
+  alt="traverse"
+  width={500}
+  sources={{
+    light: traverseImage,
+    dark: traverseImageDark,
+  }}
+/>
+
+### 3. Building the stylemap
+
+Every time the last level is reached, an entry is added to the **style map**, recording the compound styles for that configuration.
+
+<ThemedImage
+  alt="stylemap"
+  width={500}
+  sources={{
+    light: stylemapImage,
+    dark: stylemapImageDark,
+  }}
+/>
+;

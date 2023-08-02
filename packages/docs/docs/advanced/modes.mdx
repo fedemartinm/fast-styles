@@ -1,0 +1,88 @@
+---
+sidebar_position: 2
+description: How to Apply Light/Dark Modes
+---
+
+import Details from "@theme/MDXComponents/Details";
+import CodeBlock from "@theme/CodeBlock";
+import { ColorPalette } from "../../src/components/theme/colors.js";
+import { Spacings } from "../../src/components/theme/spacings.js";
+import { BorderRadiuses } from "../../src/components/theme/radiuses.js";
+import { Text } from "../../src/components/theme/fonts.js";
+
+import ColorPaletteSource from "!!raw-loader!../../src/components/theme/colors.js";
+import SpacingSource from "!!raw-loader!../../src/components/theme/spacings.js";
+import BorderRadiusesSource from "!!raw-loader!../../src/components/theme/radiuses.js";
+import TokensSource from "!!raw-loader!@fast-styles/react/src/theme/tokens";
+
+# Modes
+
+Conceptually, supporting **light**/**dark** mode is just like adding another variation to your components.
+The only thing needed is to find a global way to configure that variation.
+
+If you want to use the utility provided by Fast Styles for this, you can wrap your application with the `ModeProvider` and use the `useMode` hook to consume or change the mode.
+
+```jsx live noInline
+const ButtonRoot = styled(TouchableOpacity, {
+  textAlign: "center",
+  borderRadius: defaultTheme.borderRadiuses.$4,
+  width: defaultTheme.spacings.$30,
+  marginTop: defaultTheme.spacings.$3,
+  variants: {
+    mode: {
+      light: {
+        // Defining tokens for each mode allows easy style modifications throughout the app.
+        backgroundColor: defaultTheme.tokens.$backgroundDark,
+      },
+      dark: {
+        backgroundColor: defaultTheme.tokens.$backgroundDefault,
+      },
+    },
+  },
+});
+
+const ButtonText = styled(Text, {
+  variants: {
+    mode: {
+      light: {
+        color: defaultTheme.tokens.$textDefault,
+      },
+      dark: {
+        color: defaultTheme.tokens.$textLight,
+      },
+    },
+  },
+});
+
+const Button = (props) => {
+  // Simply consume the current mode from the hook and pass it to your components.
+  const [mode] = useMode();
+  return (
+    <ButtonRoot mode={mode}>
+      <ButtonText mode={mode}>{props.children}</ButtonText>
+    </ButtonRoot>
+  );
+};
+
+const ToggleMode = () => {
+  // At some point in your application, you should offer the possibility to toggle between modes.
+  // For this, you can use the second element returned by useMode.
+  const [mode, setMode] = useMode();
+  const toggleMode = () => setMode(mode === "light" ? "dark" : "light");
+
+  return <button onClick={toggleMode}>toggle theme</button>;
+};
+
+// Wrap your application with the ModeProvider.
+render(
+  <ModeProvider>
+    <ToggleMode />
+    <Button>Button</Button>
+  </ModeProvider>
+);
+```
+
+:::note
+If you have components with other variants, remember that you can use the compoundVariants attribute
+to define the behavior of each variant plus the mode, e.g., `primary+dark` or `primary+light`.
+:::

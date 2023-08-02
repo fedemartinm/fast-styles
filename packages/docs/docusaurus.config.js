@@ -31,7 +31,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  themes: ["@docusaurus/theme-live-codeblock"],
   presets: [
     [
       "classic",
@@ -39,6 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          sidebarCollapsible: false,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -50,6 +51,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: "beta",
+        content:
+          "<b>🎉 We need your help to shape it for production! Test and share feedback to make it even better. 🙌<b/>",
+        backgroundColor: "#ffc72c",
+        textColor: "#black",
+        isCloseable: true,
+      },
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
@@ -66,7 +75,7 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "mainSidebar",
             position: "left",
             label: "Docs",
           },
@@ -85,15 +94,15 @@ const config = {
             items: [
               {
                 label: "Installation",
-                to: "/docs/intro",
+                to: "/docs/basics/installation",
               },
               {
-                label: "Examples",
-                to: "/docs/intro",
+                label: "Basics",
+                to: "/docs/category/basics",
               },
               {
-                label: "Docs",
-                to: "/docs/intro",
+                label: "Advanced",
+                to: "/docs/category/advanced",
               },
             ],
           },
@@ -106,11 +115,11 @@ const config = {
               },
               {
                 label: "Why this library?",
-                to: "/docs/more/why-this-library",
+                to: "/docs/basics/why-this-library",
               },
               {
                 label: "Philosophy",
-                to: "/docs/more/philosophy",
+                to: "/docs/advanced/philosophy",
               },
             ],
           },

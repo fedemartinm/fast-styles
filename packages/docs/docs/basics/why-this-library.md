@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Discover the reasons behind choosing this library
 ---
 
 # Why this library?
@@ -13,9 +14,7 @@ At first, we thought we might have done something wrong, so we checked the confi
 
 We repeated these tests with other style libraries, and the results were consistent. Most of the style libraries improved the dev experience but **negatively impacted the application's performance**.
 
-:::caution Performance Issues
 The mapping of properties, development ease, and cross-platform improvements come at a high cost in terms of complexity and, in many cases, runtime.
-:::
 
 This library is born as an alternative to add **variants** to your components, **minimize runtime**, and maintain code simplicity.
 

@@ -1,0 +1,176 @@
+---
+sidebar_position: 1
+description: Discover theme implementation
+---
+
+import Details from "@theme/MDXComponents/Details";
+import CodeBlock from "@theme/CodeBlock";
+import { ColorPalette } from "../../src/components/theme/colors.js";
+import { Spacings } from "../../src/components/theme/spacings.js";
+import { BorderRadiuses } from "../../src/components/theme/radiuses.js";
+import { Text } from "../../src/components/theme/fonts.js";
+
+import ColorPaletteSource from "!!raw-loader!../../src/components/theme/colors.js";
+import SpacingSource from "!!raw-loader!../../src/components/theme/spacings.js";
+import BorderRadiusesSource from "!!raw-loader!../../src/components/theme/radiuses.js";
+import TokensSource from "!!raw-loader!@fast-styles/react/src/theme/tokens";
+
+# Theming
+
+Fast Styles is designed to efficiently apply styles by processing only the **minimum necessary at runtime**. This means we can reference any variable as long as **it's not within the render**.
+This library provides a default theme and also utilities for creating, combining, or extending themes.
+
+## Using the default theme
+
+With fast-styles, you can easily create your own design system, including custom color, spacing, font definitions, etc.
+Therefore, it is recommended to define your own theme.
+However, if you want to build quickly, you can an import the `defaultTheme` from `@fast-styles/react` package that defines the following values:
+
+- Colors
+- Spacings
+- Border Radiuses
+- Fonts
+- Font Weights
+- Font Sizes
+- Tokens
+
+### Colors
+
+You can copy the name of a `color` by clicking on it.
+
+<ColorPalette />
+<br />
+<Details>
+  <summary mdxType="summary">View Code</summary>
+  <CodeBlock language="jsx">{ColorPaletteSource}</CodeBlock>
+</Details>
+
+### Spacings
+
+#### Unit Values
+
+Spacing units that increase by 4 and go up to 100
+
+<Spacings type={"unitValues"} />
+
+#### Percent Values
+
+Common fractions to represent percentage values
+
+<Spacings type={"percentValues"} />
+
+#### Pixel Values
+
+Included solely to maintain consistency when an intermediate value between unit spacings is needed
+
+<Spacings type={"pixelValues"} />
+<br />
+<Details>
+  <summary mdxType="summary">View Code</summary>
+  <CodeBlock language="jsx">{SpacingSource}</CodeBlock>
+</Details>
+
+### Border Radiuses
+
+Border radiuses are defined in increments of two.
+
+<BorderRadiuses />
+<br />
+<Details>
+  <summary mdxType="summary">View Code</summary>
+  <CodeBlock language="jsx">{BorderRadiusesSource}</CodeBlock>
+</Details>
+
+### Fonts
+
+You can access the font families by using `defaultTheme.font.$option`.
+
+| Name     | iOS    | Android   | Web        |
+| -------- | ------ | --------- | ---------- |
+| $heading | System | Roboto    | sans-serif |
+| $text    | System | Roboto    | sans-serif |
+| $code    | Menlo  | monospace | monospace  |
+
+### Font Sizes
+
+You can access the font sizes by using `defaultTheme.fontSizes.$option`.
+
+> <Text size={"$xxs"} />
+> <Text size={"$xs"} />
+> <Text size={"$sm"} />
+> <Text size={"$md"} />
+> <Text size={"$lg"} />
+> <Text size={"$xxl"} />
+> <Text size={"$3xl"} />
+> <Text size={"$4xl"} />
+> <Text size={"$5xl"} />
+
+### Font Weights
+
+You can access the font weights by using `defaultTheme.fontWeights.$option`.
+
+| Name      | Value | Name        | Value |
+| --------- | ----- | ----------- | ----- |
+| $hairline | 100   | $semibold   | 600   |
+| $thin     | 200   | $bold       | 700   |
+| $light    | 300   | $extrabold  | 800   |
+| $normal   | 400   | $black      | 900   |
+| $medium   | 500   | $extraBlack | 950   |
+
+### Tokens
+
+Tokens are an essential part of the theme;
+you will likely reference them many times throughout your development, allowing you to customize the application quickly.
+You can access the tokens using the following format: `defaultTheme.tokens.$token`.
+
+<Details>
+  <summary mdxType="summary">View Tokens</summary>
+  <CodeBlock language="jsx">{TokensSource}</CodeBlock>
+</Details>
+
+## Extending the default theme
+
+If you want to extend the default theme, you can use the `extendDefaultTheme` function from the package `@fast-styles/react`.
+
+```jsx live noInline
+const extendedTheme = extendDefaultTheme({
+  colors: {
+    //In this case, we are extending the colors with two new values
+    $awesomeBlue: "#023047",
+    $awesomeOrange: "#FB8500",
+  },
+  tokens: {
+    //In this case, we are replacing the default values for textDefault and textLight
+    $textDefault: "#FB8500",
+    $textLight: "#023047",
+  },
+});
+
+const StyledText = styled(Text, {
+  textAlign: "center",
+  width: extendedTheme.spacings.$20,
+  backgroundColor: extendedTheme.colors.$awesomeBlue,
+  color: extendedTheme.tokens.$textDefault,
+});
+
+render(<StyledText>Message</StyledText>);
+```
+
+## Creating your own theme
+
+You can create your own theme using the function `createTheme` from the package `@fast-styles/react`.
+
+```jsx
+export const defaultTheme = createTheme({
+  //There are no predefined categories, so you can add any structure you prefer.
+  //Some common categories are as follows:
+  //colors: {},
+  //fonts: {},
+  //borderRadiuses: {},
+  //fontWeights: {},
+  //fontSizes: {},
+  //spacings: {},
+  //styles: {},
+  //tokens: {},
+});
+```

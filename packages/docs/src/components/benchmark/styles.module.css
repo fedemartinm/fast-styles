@@ -45,7 +45,7 @@
 .chart {
   padding: 16px;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 20px;
   overflow-x: hidden;
   display: flex;

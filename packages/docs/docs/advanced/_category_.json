@@ -1,0 +1,12 @@
+{
+  "label": "Advanced",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "10 minutes to learn the advanced fast-styles concepts."
+  },
+  "customProps": {
+    "badges": ["new", "green"],
+    "featured": true
+  }
+}
