@@ -4,9 +4,12 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import useIntersection from "../../hooks/use-intersection-observer";
+import useMediaQuery from "../../hooks/use-media-query";
 
 export default function Benchmark() {
   const [iphoneRef, triggered] = useIntersection(0.5);
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <div className={clsx(styles.benchmark, "container")}>
       <h2 className={styles.benchmark__title}>
@@ -17,8 +20,8 @@ export default function Benchmark() {
         <Link to="/docs/category/basics">benchmark results</Link>
       </p>
       <div className={styles.benchmark_columns}>
-        <Iphone animated={triggered} ref={iphoneRef} />
-        {triggered && (
+        <Iphone animated={triggered || isMobile} ref={iphoneRef} />
+        {(triggered || isMobile) && (
           <div className={styles.chart}>
             <div className={styles.barContainer}>
               <div className={clsx(styles.bar, styles.fast)} />
