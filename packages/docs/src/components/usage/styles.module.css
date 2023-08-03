@@ -5,9 +5,9 @@
   padding: 2rem;
 }
 
-.codeBlock {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.codeBlockContainer {
+  width: 100%;
+  max-width: 700px;
 }
 .usage__title {
   font-size: 2rem;

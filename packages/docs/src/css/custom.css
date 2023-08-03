@@ -14,6 +14,8 @@
   --ifm-color-primary-lighter: #3998b6;
   --ifm-color-primary-lightest: #52a5bf;
   --ifm-code-font-size: 95%;
+  --iphone-placeholder: var(--ifm-color-gray-500);
+  --iphone-background: var(--ifm-color-gray-0);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -26,6 +28,8 @@
   --ifm-color-primary-light: #2ca8cf;
   --ifm-color-primary-lighter: #43b1d5;
   --ifm-color-primary-lightest: #5bbbda;
+  --iphone-placeholder: var(--ifm-color-gray-800);
+  --iphone-background: var(--ifm-color-gray-900);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 

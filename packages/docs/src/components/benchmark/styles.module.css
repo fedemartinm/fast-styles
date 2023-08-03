@@ -70,7 +70,7 @@
 }
 .text {
   display: block;
-  color: white;
+  color: var(--ifm-font-color-base);
   opacity: 0;
   margin-left: 10px;
   animation-name: fadeInText;
