@@ -286,11 +286,14 @@ function getConfigRules(path) {
   const parentNode = path.parentPath.node;
   const grandparentNode = path.parentPath.parentPath.node;
   let leadingComments;
-  if (Array.isArray(parentNode.leadingComments)) {
+  if (parentNode?.leadingComments?.length) {
     leadingComments = parentNode.leadingComments.pop();
-  } else if (Array.isArray(grandparentNode.leadingComments)) {
+  } else if (grandparentNode?.leadingComments?.length) {
     leadingComments = grandparentNode.leadingComments.pop();
+  } else if (greatGrandparentNode?.leadingComments?.length) {
+    leadingComments = greatGrandparentNode.leadingComments.pop();
   }
+
   if (leadingComments) {
     const rawComment = leadingComments.value.trim();
     config.runtimeNext = rawComment === 'fast-styles-runtime-next';
