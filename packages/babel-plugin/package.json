@@ -1,6 +1,6 @@
 {
   "name": "@fast-styles/babel-plugin",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A Babel plugin that generates fast-styles style maps at compile time",
   "main": "lib/commonjs/index.js",
   "repository": "https://github.com/fedemartinm/fast-styles/tree/main/packages/babel-plugin",

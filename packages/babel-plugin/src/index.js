@@ -285,6 +285,8 @@ function getConfigRules(path) {
   };
   const parentNode = path.parentPath.node;
   const grandparentNode = path.parentPath.parentPath.node;
+  const greatGrandparentNode = path.parentPath.parentPath.parentPath.node;
+
   let leadingComments;
   if (parentNode?.leadingComments?.length) {
     leadingComments = parentNode.leadingComments.pop();
