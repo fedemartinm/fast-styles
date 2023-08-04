@@ -42,14 +42,13 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
 
     // add style props
     if (styleProps) {
-      style = { ...style, ...resolveStyles(props) };
+      style = Object.assign({}, style, resolveStyles(props));
     }
 
     // add inline-styles
     if (props.style) {
-      style = { ...style, ...(props.style as any) };
+      style = Object.assign({}, style, props.style);
     }
-
     return <Component {...attributes} {...(props as Props)} style={style} />;
   };
 }
