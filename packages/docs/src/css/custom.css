@@ -17,6 +17,7 @@
   --iphone-placeholder: var(--ifm-color-gray-500);
   --iphone-background: var(--ifm-color-gray-0);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-footer-background-color: red;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -33,26 +34,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-html[data-theme="dark"] footer {
-  background-color: #242526;
-  text-align: center;
-}
-html[data-theme="light"] footer {
-  background-color: #ffffff;
-  text-align: center;
-  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.1);
-  & .footer__link-item,
-  .footer__title {
-    color: #1c1e21;
-  }
-}
-
 .menu__list-item-collapsible,
 a[href="/docs/api-reference"].menu__link {
   font-weight: 800;
-}
-
-.cardTitle_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module::first-letter {
-  /* font-size: 0; */
-  display: none;
 }
