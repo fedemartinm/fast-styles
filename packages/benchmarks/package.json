@@ -1,0 +1,38 @@
+{
+  "name": "benchmarks",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@fast-styles/react": "^0.2.6",
+    "@gluestack-style/babel-plugin-styled-resolver": "^0.1.14",
+    "@gluestack-style/react": "^0.1.33",
+    "@tamagui/babel-plugin": "^1.43.15",
+    "@tamagui/core": "^1.43.15",
+    "@tamagui/font-inter": "^1.43.15",
+    "@tamagui/themes": "^1.43.15",
+    "@types/react": "~18.0.27",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
+    "expo": "~48.0.18",
+    "expo-splash-screen": "~0.18.2",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native": "0.71.8",
+    "react-native-dropdown-picker": "^5.4.6",
+    "react-native-safe-area-context": "^4.7.1",
+    "react-native-svg": "^13.10.0",
+    "styled-components": "^6.0.4",
+    "tamagui": "^1.43.15",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@fast-styles/babel-plugin": "^0.2.3"
+  },
+  "private": true
+}
