@@ -1,3 +1,4 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import Iphone from "../iphone";
 import Link from "@docusaurus/Link";
 import React from "react";
@@ -7,6 +8,16 @@ import useIntersection from "../../hooks/use-intersection-observer";
 import useMediaQuery from "../../hooks/use-media-query";
 
 export default function Benchmark() {
+  return (
+    <BrowserOnly fallback={<div>Loading...</div>}>
+      {() => {
+        return <BenchmarkContent />;
+      }}
+    </BrowserOnly>
+  );
+}
+
+const BenchmarkContent = () => {
   const [iphoneRef, triggered] = useIntersection(0.5);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -21,8 +32,9 @@ export default function Benchmark() {
           benchmark results
         </Link>
       </p>
+
       <div className={styles.benchmark_columns}>
-        <Iphone animated={triggered || isMobile} ref={iphoneRef} />
+        {!isMobile && <Iphone animated={triggered} ref={iphoneRef} />}
         {(triggered || isMobile) && (
           <div className={styles.chart}>
             <div className={styles.barContainer}>
@@ -60,4 +72,4 @@ export default function Benchmark() {
       </div>
     </div>
   );
-}
+};
