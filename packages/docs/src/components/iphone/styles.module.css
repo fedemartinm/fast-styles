@@ -167,26 +167,28 @@
 /*tamagui: #ff8ee8*/
 @keyframes rendered {
   0%,
-  15%,
-  45%,
-  90%,
-  75%,
-  100% {
+  7%,
+  12%,
+  20%,
+  25%,
+  35%,
+  65%,
+  75% {
     background-color: var(--iphone-placeholder);
   }
-  20% {
+  5% {
     background-color: #ffc72c;
   }
-  25% {
+  10% {
     background-color: #61dafb;
   }
-  30% {
+  15% {
     background-color: #c04f74;
   }
-  55% {
+  30% {
     background-color: #ff8ee8;
   }
-  90% {
+  70% {
     background-color: #50bfc2;
   }
 }

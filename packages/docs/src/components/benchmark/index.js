@@ -17,7 +17,9 @@ export default function Benchmark() {
       </h2>
       <p className={styles.benchmark__subtitle}>
         See how we stack up against other libraries in our{" "}
-        <Link to="/docs/category/basics">benchmark results</Link>
+        <Link to="https://github.com/fedemartinm/fast-styles/tree/main/packages/benchmarks#fast-styles-benchmark">
+          benchmark results
+        </Link>
       </p>
       <div className={styles.benchmark_columns}>
         <Iphone animated={triggered || isMobile} ref={iphoneRef} />
@@ -26,31 +28,31 @@ export default function Benchmark() {
             <div className={styles.barContainer}>
               <div className={clsx(styles.bar, styles.fast)} />
               <div className={clsx(styles.text, styles.fast)}>
-                Fast Styles - 254ms
+                Fast Styles - 76ms
               </div>
             </div>
             <div className={styles.barContainer}>
               <div className={clsx(styles.bar, styles.vanilla)} />
               <div className={clsx(styles.text, styles.vanilla)}>
-                React Native Vanilla - 282ms
+                React Native Vanilla - 84ms
               </div>
             </div>
             <div className={styles.barContainer}>
               <div className={clsx(styles.bar, styles.styled)} />
               <div className={clsx(styles.text, styles.styled)}>
-                Styled Components - 360ms
+                Styled Components - 102ms
               </div>
             </div>
             <div className={styles.barContainer}>
               <div className={clsx(styles.bar, styles.tamagui)} />
               <div className={clsx(styles.text, styles.tamagui)}>
-                Tamagui - 760ms
+                Tamagui - 284ms
               </div>
             </div>
             <div className={styles.barContainer}>
-              <div className={clsx(styles.bar, styles.nativebase)} />
-              <div className={clsx(styles.text, styles.nativebase)}>
-                NativeBase - 1400ms
+              <div className={clsx(styles.bar, styles.gluestack)} />
+              <div className={clsx(styles.text, styles.gluestack)}>
+                Gluestack - 832ms
               </div>
             </div>
           </div>

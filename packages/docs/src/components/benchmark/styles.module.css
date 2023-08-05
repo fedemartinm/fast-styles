@@ -79,23 +79,23 @@
 }
 
 .text.fast {
-  animation-delay: 508ms;
+  animation-delay: 228ms;
 }
 
 .text.vanilla {
-  animation-delay: 564ms;
+  animation-delay: 252ms;
 }
 
 .text.styled {
-  animation-delay: 720ms;
+  animation-delay: 306ms;
 }
 
 .text.tamagui {
-  animation-delay: 1520ms;
+  animation-delay: 852ms;
 }
 
-.text.nativebase {
-  animation-delay: 2800ms;
+.text.gluestack {
+  animation-delay: 2496ms;
 }
 
 .bar.fast {
@@ -103,37 +103,32 @@
   background-color: #ffc72c;
 }
 .bar.fast {
-  animation: expandWidth 508ms;
+  animation: expandWidth 228ms;
 }
 
 .bar.vanilla {
   width: 56px;
   background-color: #61dafb;
-  animation: expandWidth 564ms;
+  animation: expandWidth 252ms;
   animation-timing-function: linear;
 }
 .bar.styled {
   width: 72px;
   background-color: #c04f74;
-  animation: expandWidth 720ms;
+  animation: expandWidth 306ms;
   animation-timing-function: linear;
 }
 
 .bar.tamagui {
   width: 152px;
   background-color: #ff8ee8;
-  animation: expandWidth 1520ms;
+  animation: expandWidth 852ms;
   animation-timing-function: linear;
 }
+
 .bar.gluestack {
   width: 280px;
-  background-color: #3fb6ac;
-  animation: expandWidth 1400ms;
-  animation-timing-function: linear;
-}
-.bar.nativebase {
-  width: 280px;
   background-color: #50bfc2;
-  animation: expandWidth 2800ms;
+  animation: expandWidth 2496ms;
   animation-timing-function: linear;
 }
