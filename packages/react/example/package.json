@@ -22,5 +22,8 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^5.0.0"
   },
+  "resolutions": {
+    "expo/@expo/cli/@expo/prebuild-config/@expo/image-utils/semver": "^7.5.4"
+  },
   "private": true
 }
