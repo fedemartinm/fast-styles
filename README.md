@@ -46,8 +46,8 @@ const ButtonRoot = styled(TouchableOpacity, {
   // variants
   variants: {
     coloScheme: {
-      primary: {
-        positive: "green",
+      positive: {
+        backgroundColor: "green",
       },
       negative: {
         backgroundColor: "red",
