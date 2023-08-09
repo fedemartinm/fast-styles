@@ -47,7 +47,7 @@ const ButtonRoot = styled(TouchableOpacity, {
   variants: {
     coloScheme: {
       primary: {
-        positive: "green",
+        backgroundColor: "green",
       },
       negative: {
         backgroundColor: "red",
@@ -61,14 +61,14 @@ const ButtonRoot = styled(TouchableOpacity, {
 
 const Button = (props) => {
   return (
-    <ButtonRoot colorScheme={"positive"} onPress={props.onPress}>
+    <ButtonRoot colorScheme={"primary"} onPress={props.onPress}>
       {props.children}
     </ButtonRoot>
   );
 };
 ```
 
-### Compund Variants
+### Compound Variants
 
 When needing to set styles for a variant based on a combination of other variants, you can create a rule for compound variants using the + sign.
 
