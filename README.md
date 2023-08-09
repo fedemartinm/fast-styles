@@ -68,7 +68,7 @@ const Button = (props) => {
 };
 ```
 
-### Compund Variants
+### Compound Variants
 
 When needing to set styles for a variant based on a combination of other variants, you can create a rule for compound variants using the + sign.
 

@@ -17,7 +17,7 @@ type VariantNode = {
 };
 
 // Generates a map with compound keys, which will be used to apply those styles when the tree is traversed.
-function getCompundVariantsMap(compoundVariants: any) {
+function getCompoundVariantsMap(compoundVariants: any) {
   if (!compoundVariants) {
     return [];
   }
@@ -99,7 +99,7 @@ function variantsTreeTraversal(styledObject: StyledObject<any, any, any>): Recor
     return { default: styles };
   }
 
-  const compoundVars = getCompundVariantsMap(compoundVariants);
+  const compoundVars = getCompoundVariantsMap(compoundVariants);
 
   return variantsNodeTraversal({
     compoundVars,

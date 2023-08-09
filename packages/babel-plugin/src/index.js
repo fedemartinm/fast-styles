@@ -40,7 +40,7 @@ export default function babelPluginWithStyles({ types }) {
           const styles = styledObjectNode;
 
           // generate compound map
-          const compoundVars = getCompundVariantsMap(compoundVariants);
+          const compoundVars = getCompoundVariantsMap(compoundVariants);
           const variantKeys = getNodeKeys(variants);
 
           // keep other styledObject properties
@@ -169,7 +169,7 @@ function extractProperty(objectExpressionNode, propertyName) {
 }
 
 // Generates a map with compound keys, which will be used to apply those styles when the tree is traversed.
-function getCompundVariantsMap(compoundVariants) {
+function getCompoundVariantsMap(compoundVariants) {
   if (!compoundVariants) {
     return [];
   }
