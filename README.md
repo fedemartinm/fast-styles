@@ -46,7 +46,7 @@ const ButtonRoot = styled(TouchableOpacity, {
   // variants
   variants: {
     coloScheme: {
-      positive: {
+      primary: {
         backgroundColor: "green",
       },
       negative: {
@@ -61,7 +61,7 @@ const ButtonRoot = styled(TouchableOpacity, {
 
 const Button = (props) => {
   return (
-    <ButtonRoot colorScheme={"positive"} onPress={props.onPress}>
+    <ButtonRoot colorScheme={"primary"} onPress={props.onPress}>
       {props.children}
     </ButtonRoot>
   );
