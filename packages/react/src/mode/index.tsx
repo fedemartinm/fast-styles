@@ -28,7 +28,7 @@ const useMode = () => {
  * @param {Object} props - The component props.
  * @returns {JSX.Element} The wrapped component tree with access to the mode context.
  */
-const ModeProvider: React.FC = ({ children }) => {
+const ModeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [mode, setMode] = useState<Mode>('light');
 
   return <ModeContext.Provider value={{ mode, setMode }}>{children}</ModeContext.Provider>;
