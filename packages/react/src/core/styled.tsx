@@ -28,6 +28,7 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
   __INJECTED_KEY_RESOLVER?: KeyResolver,
   __INJECTED_STYLE_RESOLVER?: StyleResolver
 ) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { attributes, styleProps, defaultVariants: _ } = styledObject;
 
   // choose implementation

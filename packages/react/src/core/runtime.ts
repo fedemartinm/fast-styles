@@ -91,6 +91,7 @@ function variantsNodeTraversal(node: VariantNode): any {
 
 // Perform a depth-first traversal and create keys with the nodes from the root to each leaf
 function variantsTreeTraversal(styledObject: StyledObject<any, any, any>): Record<string, StyleProperties> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { attributes, variants, styleProps, compoundVariants, defaultVariants: _, ...styles } = styledObject;
   const variantKeys = Object.keys(variants || {}).sort();
 
