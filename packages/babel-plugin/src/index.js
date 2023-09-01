@@ -283,17 +283,17 @@ function getConfigRules(path) {
   let config = {
     runtimeNext: false,
   };
-  const parentNode = path.parentPath.node;
-  const grandparentNode = path.parentPath.parentPath.node;
-  const greatGrandparentNode = path.parentPath.parentPath.parentPath.node;
 
   let leadingComments;
-  if (parentNode?.leadingComments?.length) {
-    leadingComments = parentNode.leadingComments.pop();
-  } else if (grandparentNode?.leadingComments?.length) {
-    leadingComments = grandparentNode.leadingComments.pop();
-  } else if (greatGrandparentNode?.leadingComments?.length) {
-    leadingComments = greatGrandparentNode.leadingComments.pop();
+  let currentPath = path.parentPath;
+  // searches up to 4 levels for comments
+  // callExpression, variableDeclarator, variableDeclaration and exportKeyword
+  for (let i = 0; i < 4 && currentPath; i++) {
+    if (currentPath.node?.leadingComments?.length) {
+      leadingComments = currentPath.node?.leadingComments.pop();
+      break;
+    }
+    currentPath = currentPath?.parentPath;
   }
 
   if (leadingComments) {
