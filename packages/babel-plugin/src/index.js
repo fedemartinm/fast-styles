@@ -222,22 +222,25 @@ function getStylemapKey(types, variantKeys, variants, defaultVariants) {
 
   const variantOrDefault = variantKeys.map((property) => {
     let defaultValue = '';
-    // find default value
+    // it obtains the default variant defined by the user
+    // or the first option of that variant
     if (defaultVariants) {
       const defaultVariant = getPropertyValue(defaultVariants, property);
       if (defaultVariant) {
         defaultValue = defaultVariant.value;
-      } else {
-        const variant = getPropertyValue(variants, property);
-        if (!types.isObjectExpression(variant)) {
-          throw 'getStylemapKey: expected object expression';
-        }
-        const firstNode = variant.properties[0];
-        if (firstNode) {
-          defaultValue = getPropertyName(firstNode);
-        }
       }
     }
+    if (defaultValue === '') {
+      const variant = getPropertyValue(variants, property);
+      if (!types.isObjectExpression(variant)) {
+        throw 'getStylemapKey: expected object expression';
+      }
+      const firstNode = variant.properties[0];
+      if (firstNode) {
+        defaultValue = getPropertyName(firstNode);
+      }
+    }
+
     const memberExpression = types.memberExpression(propsIdentifier, types.identifier(property));
     const defaultLiteralValue = types.stringLiteral(defaultValue);
     return types.logicalExpression('||', memberExpression, defaultLiteralValue);
