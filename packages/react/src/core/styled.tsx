@@ -37,7 +37,7 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
   const resolveStyles = __INJECTED_STYLE_RESOLVER || getStyleResolver(styledObject);
 
   // return fast styled component
-  return (props: WithStyles<Props> | VariantsProps<Variants> | StyleProps<Binds>) => {
+  return React.forwardRef((props: WithStyles<Props> | VariantsProps<Variants> | StyleProps<Binds>, ref) => {
     const key = resolveKey(props);
     let style = styleMap[key];
 
@@ -50,6 +50,6 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
     if (props.style) {
       style = Object.assign({}, style, props.style);
     }
-    return <Component {...attributes} {...(props as Props)} style={style} />;
-  };
+    return <Component ref={ref} {...attributes} {...(props as Props)} style={style} />;
+  });
 }
