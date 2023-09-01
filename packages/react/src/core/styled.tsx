@@ -28,6 +28,7 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
   __INJECTED_KEY_RESOLVER?: KeyResolver,
   __INJECTED_STYLE_RESOLVER?: StyleResolver
 ) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { attributes, styleProps, defaultVariants: _ } = styledObject;
 
   // choose implementation
@@ -36,7 +37,7 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
   const resolveStyles = __INJECTED_STYLE_RESOLVER || getStyleResolver(styledObject);
 
   // return fast styled component
-  return (props: WithStyles<Props> | VariantsProps<Variants> | StyleProps<Binds>) => {
+  return React.forwardRef((props: WithStyles<Props> | VariantsProps<Variants> | StyleProps<Binds>, ref) => {
     const key = resolveKey(props);
     let style = styleMap[key];
 
@@ -49,6 +50,6 @@ export function styled<Props, Variants extends VariantsType, Binds extends Props
     if (props.style) {
       style = Object.assign({}, style, props.style);
     }
-    return <Component {...attributes} {...(props as Props)} style={style} />;
-  };
+    return <Component ref={ref} {...attributes} {...(props as Props)} style={style} />;
+  });
 }
