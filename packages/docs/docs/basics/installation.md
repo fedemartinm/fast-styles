@@ -10,7 +10,7 @@ description: Quick installation guide
 - Use yarn or npm to add the library to your project
 
 ```bash
-yarn add @fast-styes/react
+yarn add @fast-styles/react
 // or
 npm install --save @fast-styles/react
 ```
